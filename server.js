@@ -61,6 +61,10 @@ app.get("/api/recipes", async (req, res) => {
   }
 });
 
+app.get("/", (req, res) => {
+  res.send("Recipe Sharing API is running!");
+});
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
