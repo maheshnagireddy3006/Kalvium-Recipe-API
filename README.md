@@ -1,27 +1,36 @@
-# 🍳 Kalvium Recipe Sharing API
+# Recipe Sharing API
 
-This is a backend API for managing recipes. Built with **Node.js + Express** and deployed on **Render**.
+This project is a simple backend for managing recipes.
 
----
+## How to run locally
 
-## 🚀 Features
-- Add new recipes (`POST /api/recipes`)
-- Get all recipes (`GET /api/recipes`)
-- Stores recipes in `recipes.json`
-- Auto-generates unique IDs
-- Defaults difficulty to "medium"
+bash
+npm install
+npm start
 
----
 
-## 📌 Endpoints
+The server runs on http://localhost:3000
 
-### 1. Add Recipe
-**POST** `/api/recipes`  
-Body (JSON):
-```json
+## Endpoints
+
+### Add Recipe
+- *POST* /api/recipes
+- Body (JSON):
+json
 {
   "title": "Pasta",
-  "ingredients": "Noodles, Tomato Sauce, Cheese",
-  "instructions": "Boil pasta, add sauce, mix",
-  "cookTime": "20 mins"
+  "ingredients": ["noodles", "sauce"],
+  "instructions": "Boil noodles and add sauce",
+  "cookTime": "15m"
 }
+
+- Returns the created recipe.
+
+### Get All Recipes
+- *GET* /api/recipes
+- Returns all stored recipes.
+
+## Deployment
+
+- Deployed on Render with Node.js
+- Server listens on process.env.PORT || 3000
